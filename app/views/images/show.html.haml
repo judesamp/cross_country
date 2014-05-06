@@ -1,0 +1,42 @@
+.col-md-9
+  %h3= @image.title | 
+  = time_ago_in_words @image.image_date
+  = "ago"
+  %br
+
+  = image_tag @image.image_data.url, :style => "max-width: 100%"
+  %br
+  = @image.description
+  %p= link_to "Download Image", download_image_path
+
+
+
+
+  = render "comments/comments"
+
+  Add a Comment
+  %br
+  %br
+  = render "comments/form"
+
+
+
+.col-md-3
+  %br
+  %br
+  = button_to 'Delete this Image', image_path(@image), method: "delete", data: { confirm: "Are you sure?" }, class: "btn btn-primary form-control"
+  %br
+  = link_to "Edit this Image", edit_image_path(@image), class: "btn btn-primary form-control"
+  %br
+  %br
+  = render "tags/tags"
+  %br
+  %br
+  = render "tags/form"
+ 
+
+
+
+
+
+

@@ -1,0 +1,14 @@
+%h1 All Runs
+
+= link_to "Create a New Run", new_event_path, class: "btn btn-default"
+%br
+%br
+
+- @events.each do |i|
+  = link_to "#{i.name}, #{time_ago_in_words(i.event_date)} ago", event_path(i)
+  %br
+  = image_tag i.event_image.url
+  %br
+  = i.description
+  %br
+  %br

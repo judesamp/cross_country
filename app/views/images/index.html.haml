@@ -1,0 +1,24 @@
+%h1 All Images
+
+= link_to "Create a New Image", new_image_path
+
+%br
+
+
+- @images.each do |i|
+  .col-md-4
+    .panel.panel-info
+      .panel-heading
+        = link_to "#{i.title}, #{time_ago_in_words(i.image_date)}", image_path(i)
+        %br
+        %br
+      .panel-body
+        = image_tag i.image_data.url(:regular)
+
+        %br
+      .panel-footer
+        = i.description
+        %br
+        %br
+   
+

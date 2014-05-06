@@ -1,0 +1,25 @@
+
+
+.col-md-9
+  %h3= @event.name
+  = @event.description
+  = time_ago_in_words(@event.event_date)
+  = "ago"
+
+  = image_tag @event.event_image.url, :style => "max-width: 100%"
+  %p= link_to "Download Image", download_image_path
+
+
+  - form_for @event do |f|
+    - fields_for @comment do |c|
+      = c.label "Leave a comment"
+      = c.text_area :content
+
+      = c.submit
+
+  = render "comments/comments"
+  = render "comments/form"
+.col-md-3
+  = button_to 'Delete this Run', event_path(@event), method: "delete", data: { confirm: "Are you sure?" }, class: "btn btn-primary form-control"
+  %br
+  = link_to "Edit this Run", edit_event_path(@event), class: "btn btn-primary form-control"

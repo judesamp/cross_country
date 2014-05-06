@@ -1,0 +1,15 @@
+/ = link_to "New Comment", [:new, @commentable, :comment]
+
+- if @comments.present?
+  %h3 Comments
+  %br
+
+  #comments
+    -@comments.each do |comment|
+      .comment
+        = "-"
+        = comment.content
+        %br
+        %br
+- else
+  Be the first to leave a comment.

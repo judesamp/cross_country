@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cross Country</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <nav class="navbar navbar-default" role="navigation">
+    <a class="navbar-brand" href="/">Run across America</a>
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="/events">Your Runs</a>
+      </li>
+      <li class="">
+        <a href="/images">Your Images</a>
+      </li>
+    </ul>
+  </nav>
+
+
+
+<div class="add_top_margin container">
+  <div class="row">
+
+    <%= yield %>
+
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+.form-group
+  = form_for [@commentable, @comment] do |f|
+
+    = f.text_area :content, class: 'form-control'
+    %br
+    = f.submit

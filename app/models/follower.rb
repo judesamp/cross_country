@@ -1,0 +1,4 @@
+class Follower < User
+
+end
+
