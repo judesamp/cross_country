@@ -13,13 +13,17 @@ class TagsController < ApplicationController
 
   def create
     @image = @current_image
-    @tag = @image.tags.new(tags_params)
-    if @image.tags << @tag
+    tag = Tag.where(name: tags_params[:name]).first_or_create
+    if @image.tags << tag
       redirect_to @current_image, notice: "Comment created"
     else
       render :new
     end
   end
+
+
+
+
 
   private 
 
