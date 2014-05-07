@@ -13,5 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery_nested_form
+//= require jquery-1.10.2.min
+//= require freewall
 //= require turbolinks
 //= require_tree .

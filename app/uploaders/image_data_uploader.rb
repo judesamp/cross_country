@@ -24,7 +24,7 @@ class ImageDataUploader < CarrierWave::Uploader::Base
 
 
   version :regular do
-    process :resize_to_fit => [300, 350]
+    process :resize_to_limit => [350, 350]
   end
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url

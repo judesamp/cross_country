@@ -1,3 +1,5 @@
 #tags
+  %b Tags:
   - @tags.each do |tag|
-    %span.custom_tag= tag.name 
+    - if tag.name.present?
+      %span.custom_tag= tag.name 

@@ -3,6 +3,13 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
+  post 'event_comments_create' => 'comments#custom_create'
+  get "login" => "sessions#new"
+  get "logout" => "sessions#destroy"
+
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -30,7 +37,10 @@ Rails.application.routes.draw do
   #     end
   #   end
       resources :events do
-        resources :comments
+
+        resources :comments do
+
+        end
 
         member do
           get :download

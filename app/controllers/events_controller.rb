@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.all
+    @events = Event.all.shuffle
   end
 
   def new
@@ -21,6 +21,7 @@ class EventsController < ApplicationController
     @commentable = @event
     @comments = @commentable.comments
     @comment = Comment.new
+    @new_comment = @event.comments.build
   end
 
   def edit

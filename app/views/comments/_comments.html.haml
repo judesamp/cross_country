@@ -7,9 +7,10 @@
   #comments
     -@comments.each do |comment|
       .comment
-        = "-"
-        = comment.content
-        %br
-        %br
+        - if comment.content.present?
+          = "-"
+          = comment.content
+          %br
+          %br
 - else
   Be the first to leave a comment.

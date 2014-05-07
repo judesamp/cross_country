@@ -1,4 +1,4 @@
-.col-md-9
+.col-md-3.col-md-offset-3
   %h3= @image.title | 
   = time_ago_in_words @image.image_date
   = "ago"
@@ -7,7 +7,8 @@
   = image_tag @image.image_data.url, :style => "max-width: 100%"
   %br
   = @image.description
-  %p= link_to "Download Image", download_image_path
+  %br
+  
 
 
 
@@ -29,7 +30,11 @@
   = link_to "Edit this Image", edit_image_path(@image), class: "btn btn-primary form-control"
   %br
   %br
+  = link_to "Download Image", download_image_path, class: "btn btn-primary form-control"
+  %br
+  %br
   = render "tags/tags"
+  %br
   %br
   %br
   = render "tags/form"

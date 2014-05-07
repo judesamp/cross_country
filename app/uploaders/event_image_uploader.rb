@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 class EventImageUploader < CarrierWave::Uploader::Base
-
+  include CarrierWave::RMagick
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -14,6 +14,15 @@ class EventImageUploader < CarrierWave::Uploader::Base
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  end
+
+  version :thumb do
+    process :resize_to_limit => [50, 50]
+  end
+
+
+  version :regular do
+    process :resize_to_limit => [350, 350]
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
