@@ -1,13 +1,12 @@
 .container
   .row
-    %h1 All Images
+    %h1 Your Images
 
     = link_to "Create a New Image", new_image_path, class: "btn btn-default"
     %br
     %br
 
-
-    - @images.each do |i|
+    - current_user.images.each do |i|
       .col-md-4
         .panel.panel-info
           .panel-heading
@@ -24,5 +23,5 @@
             %br
 
 
-   
+
 

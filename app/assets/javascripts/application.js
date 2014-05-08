@@ -15,5 +15,9 @@
 //= require jquery_nested_form
 //= require jquery-1.10.2.min
 //= require freewall
+//= require bootstrap/modal
+//= jquery.turbolinks
 //= require turbolinks
 //= require_tree .
+
+

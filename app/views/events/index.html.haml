@@ -1,17 +1,19 @@
 #welcome_container
-  = link_to "Create a New Run", new_event_path, class: "btn btn-default"
-  %h1 Your Runs
-  #image_container
-    -@events.each do |event|
-      = link_to (image_tag event.event_image.url(:regular), class: 'item'), event_path(event)
+  
+  
+  .col-md-8.col-md-offset-2
 
-  :javascript
-     $(function() {
-          var wall = new freewall("#image_container");
-              wall.reset({
-                selector: '.item',
-                gutterY: 10,
-                gutterX: 10
-              });
-      wall.fitZone();
-      });
+    %h1 Your Runs
+    = link_to "Create a New Run", new_event_path, class: "btn btn-default"
+    %br
+    %br
+    #image_container
+      -@events.each do |event|
+        = link_to (image_tag event.event_image.url(:regular), class: 'item'), event_path(event)
+        = event
+
+:javascript
+  $(function() {
+    var wall = new freewall("#image_container");
+    wall.fitWidth();
+    });

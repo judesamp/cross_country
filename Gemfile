@@ -18,15 +18,19 @@ gem 'rmagick', :require => 'RMagick'
 gem 'spring'        
 gem 'bcrypt', '~> 3.1.7'
 gem 'thin'
+gem 'jquery-turbolinks'
 
 
 group :development do
   
 end
 
-group :test do
+group :development, :test do
   gem 'rspec-rails'
+  gem 'guard'
   gem 'guard-rspec', require: false
+  gem 'terminal-notifier-guard', '~> 1.5.3'
+  gem 'terminal-notifier', '~> 1.5.1'
   gem 'growl'
   gem 'growl_notify'
   gem 'ruby_gntp'

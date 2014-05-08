@@ -9,6 +9,7 @@
   = f.date_select :image_date
   = f.label "Choose your image:"
   = f.file_field :image_data
+  = f.hidden_field :user_id, value: current_user.id
 
   =f.fields_for :tags, @new_image.tags.build do |t|
     = t.text_field :name

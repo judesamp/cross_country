@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_filter :ensure_logged_in
+  skip_filter :ensure_ownership
 
   def new
 
@@ -17,7 +19,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to login_path, success: "You logged out!"
+    redirect_to root_path, success: "You logged out!"
   end
 
 end

@@ -19,13 +19,7 @@ describe Image do
     image_2 = Image.new(:title => "image #2", image_date: 1.days.ago)
     image_2.save
     all_images = Image.all
-    expect(all_images[0]).to eq image_2
+    expect(all_images[0]).to eq image_1
   end
 
 end
-
-
- # t.string   "title"
- #    t.text     "description"
- #    t.datetime "image_date"
- #    t.string   "image_data"

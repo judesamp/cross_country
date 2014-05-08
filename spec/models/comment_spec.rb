@@ -26,8 +26,6 @@ describe Comment do
   it "should have a commmetable_type of Image if associated with an image" do
     image.comments << comment
     image.save
-    puts image.inspect
-    puts comment.inspect
     comment.commentable_type.should eq "Image"
   end
 

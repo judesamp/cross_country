@@ -1,4 +1,5 @@
-notification :growl_notify
+notification :terminal_notifier
+all_after_pass: true 
 
 guard :rspec do
   watch('spec/spec_helper.rb')                        { "spec" }

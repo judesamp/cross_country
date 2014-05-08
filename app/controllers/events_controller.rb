@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.all.shuffle
+    @events = current_user.events.shuffle
   end
 
   def new

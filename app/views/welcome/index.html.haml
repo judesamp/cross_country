@@ -1,20 +1,61 @@
-#welcome_container
+
+.col-md-8.col-md-offset-2
   %h1 Welcome
-  #image_container
+  #image_container(data-no-turbolink)
+
     -@images.each do |image|
+
       = link_to (image_tag image.image_data.url(:regular), class: 'item'), image_path(image)
-
-  :javascript
-    $(function() {
-        var wall = new freewall("#image_container");
-            wall.reset({
-              selector: '.item',
-              gutterY: 10,
-              gutterX: 10
-            });
-    wall.fitZone();
-    });
+    
 
 
 
+
+#signup.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4#myModalLabel.modal-title Signup
+      .modal-body
+        = render "users/new"
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
+        %button.btn.btn-primary{type: "button"} Save changes
+
+#login.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4#myModalLabel.modal-title Login
+      .modal-body
+        = render "sessions/new"
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
+        %button.btn.btn-primary{type: "button"} Save changes
+
+:javascript
+  
+
+  
+  $(function() {
+    var wall = new freewall("#image_container");
+
+        wall.reset({
+          selector: '.item',
+          animate: true,
+          gutterY: 10,
+          gutterX: 10
+        });
+    
+    $(document).load(wall.fitZone());
+    $(document).on('window:beforeunload', wall.fitHeight())
+
+  })
+
+
+
+
+  
 
