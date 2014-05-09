@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       session[:user_id] = @new_user.id
       redirect_to root_path, notice: "You signed up!"
     else
-      render :new, notice: "You failed"
+      redirect_to root_path, notice: "You failed"
     end
   end
 

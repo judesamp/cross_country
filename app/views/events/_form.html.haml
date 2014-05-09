@@ -12,6 +12,7 @@
 = f.label "Upload an image for your event"
 = f.file_field :event_image, class: "form-control"
 %br
+= f.hidden_field :user_id, value: current_user.id
 = f.submit type:'submit', class: "btn btn-default"
 %br
 %br

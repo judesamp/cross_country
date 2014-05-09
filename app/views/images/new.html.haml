@@ -1,20 +1,31 @@
-%h1 New Image
+.col-lg-6.col-md-6.col-lg-offset-3.col-md-offset-3.panel.panel-default
 
-= nested_form_for @new_image do |f|
-  = f.label :title
-  = f.text_field :title
-  = f.label :description
-  = f.text_area :description
-  = f.label :image_date
-  = f.date_select :image_date
-  = f.label "Choose your image:"
-  = f.file_field :image_data
-  = f.hidden_field :user_id, value: current_user.id
+  %h1 New Image
 
-  =f.fields_for :tags, @new_image.tags.build do |t|
-    = t.text_field :name
-    = t.link_to_remove "Remove this tag"
-  = f.link_to_add "Add a tag", :tags
+  = nested_form_for @new_image do |f|
+    = f.label :title
+    = f.text_field :title, class: "form-control"
+    %br
+    = f.label :description
+    = f.text_area :description, class: "form-control"
+    %br
+    = f.label :image_date
+    = f.date_select :image_date, class: "form-control"
+    %br
+    = f.label "Choose your image:"
+    = f.file_field :image_data
+    = f.hidden_field :user_id, value: current_user.id
+    %br
 
-  = f.submit
+    =f.fields_for :tags, @new_image.tags.build do |t|
+      = t.text_field :name, class: "form-control"
+      = t.link_to_remove "Remove this tag"
+      %br
+      %br
+    = f.link_to_add "Add a tag", :tags
+    %br
+    %br
+    = f.submit
+
+
 

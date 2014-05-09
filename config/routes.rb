@@ -51,6 +51,9 @@ Rails.application.routes.draw do
         resources :comments
         resources :tags
 
+        get :autocomplete_tag_name, :on => :collection
+
+
         member do
           get :download
         end

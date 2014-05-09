@@ -1,4 +1,6 @@
 class ImagesController < ApplicationController
+  autocomplete :tag, :name
+  
   def index
     @images = Image.all
   end

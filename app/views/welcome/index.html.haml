@@ -1,61 +1,63 @@
+.title
+  %br
+  %h1 Welcome to Visual Running Log
+  %br
+  - if current_user.nil?
+    %h4 Click signup to get started or go ahead and login
+  - else
+    %h4 Get started logging your runs! Add runs and images by clicking above.
+  %br
+  %br
+ 
 
-.col-md-8.col-md-offset-2
-  %h1 Welcome
-  #image_container(data-no-turbolink)
 
+  
+
+
+#index_container
+  
+  #image_container
+    
     -@images.each do |image|
 
       = link_to (image_tag image.image_data.url(:regular), class: 'item'), image_path(image)
-    
+      
 
+  #signup.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+          %h4#myModalLabel.modal-title Signup
+        .modal-body
+          = render "users/new"
+        .modal-footer
+          %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
 
-
-
-#signup.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
-  .modal-dialog
-    .modal-content
-      .modal-header
-        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-        %h4#myModalLabel.modal-title Signup
-      .modal-body
-        = render "users/new"
-      .modal-footer
-        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
-        %button.btn.btn-primary{type: "button"} Save changes
-
-#login.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
-  .modal-dialog
-    .modal-content
-      .modal-header
-        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-        %h4#myModalLabel.modal-title Login
-      .modal-body
-        = render "sessions/new"
-      .modal-footer
-        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
-        %button.btn.btn-primary{type: "button"} Save changes
+  #login.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+          %h4#myModalLabel.modal-title Login
+        .modal-body
+          = render "sessions/new"
+        .modal-footer
+          %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
 
 :javascript
-  
+  imagesLoaded( document.querySelector('#index_container'), function( instance ) {console.log('all images are loaded'); 
+    wall = new freewall("#image_container");
+    wall.reset({
+      selector: '.item',
+       animate: true,
+      gutterY: 10,
+      gutterX: 10
+    });
+    wall.fitWidth();
+  });
 
+ 
   
-  $(function() {
-    var wall = new freewall("#image_container");
-
-        wall.reset({
-          selector: '.item',
-          animate: true,
-          gutterY: 10,
-          gutterX: 10
-        });
     
-    $(document).load(wall.fitZone());
-    $(document).on('window:beforeunload', wall.fitHeight())
-
-  })
-
-
-
-
-  
 

@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe User do
   let(:user_with_no_name) { User.new( password: "bill" )}
-  let(:user_with_no_password) { User.new(name: "Joe" )}
+  let(:user_with_no_password) { User.new(email: "user1@email.com" )}
 
-  it "should require a name" do
+  it "should require an email" do
     user_with_no_name.should_not be_valid
   end
 

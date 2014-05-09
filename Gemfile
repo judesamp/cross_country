@@ -9,7 +9,6 @@ gem 'bootstrap-sass', '~> 3.1.1'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
-gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0'     
 gem 'carrierwave'
@@ -18,7 +17,9 @@ gem 'rmagick', :require => 'RMagick'
 gem 'spring'        
 gem 'bcrypt', '~> 3.1.7'
 gem 'thin'
-gem 'jquery-turbolinks'
+gem 'jquery-ui-rails'
+gem 'rails4-autocomplete'
+gem 'imagesLoaded_rails'
 
 
 group :development do
@@ -34,6 +35,8 @@ group :development, :test do
   gem 'growl'
   gem 'growl_notify'
   gem 'ruby_gntp'
+  gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 
