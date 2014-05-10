@@ -6,8 +6,6 @@ class WelcomeController < ApplicationController
     @new_user = User.new
     @images = Image.all.shuffle
   end
-
-  private
  
 end
     

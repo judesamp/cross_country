@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def new
     @new_user = User.new
+    #necessary redirect?
     redirect_to root_path, notice: "Click a button at the top of the page to sign up or login"
   end
 

@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   before_filter :load_commentable
-  skip_before_filter :load_commentable, :only => [:custom_create]
-  skip_filter :ensure_ownership
+  #skip_before_filter :load_commentable, :only => [:custom_create]
+  #skip_filter :ensure_ownership
 
   def index
     @comments = @commentable.comments

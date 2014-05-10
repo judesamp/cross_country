@@ -34,7 +34,7 @@ describe ImagesController do
 
     it "renders the new page" do
       login(user)
-      user = FactoryGirl.create(:user)
+      FactoryGirl.create(:user)
       get :new
       response.should render_template :new
     end
@@ -94,6 +94,66 @@ describe ImagesController do
       image = FactoryGirl.create(:image)
       get :show, id: image
       response.should render_template :show
+    end
+
+  end
+
+  describe "GET #edit" do
+
+    it "assigns @image with specified image" do
+      login(user)
+      image = FactoryGirl.create(:image)
+      get :edit, id: image
+      expect(assigns(:image)).to eq image
+    end
+
+    it "renders the edit page" do
+      login(user)
+      image = FactoryGirl.create(:image)
+      get :edit, id: image
+      response.should render_template :edit
+    end
+
+  end
+
+
+  describe "PUT #update" do
+
+    it "updates image with specified attributes" do
+      login(user)
+      image = FactoryGirl.create(:image)
+      put :update, id: image, :image => {title: "updated_title"}
+      updated_image = Image.find(image.id)
+      expect(updated_image.title).to eq "updated_title"
+    end
+
+    ### how to test failure redirect?
+
+    it "redirects to the edit page" do
+      login(user)
+      image = FactoryGirl.create(:image)
+      put :update, id: image, :image => {name: "updated_name"}
+      response.should redirect_to "/images/#{image.id}"
+    end
+
+  end
+
+  describe "DELETE #destroy" do
+
+    it "updates image with specified attributes" do
+      login(user)
+      image = FactoryGirl.create(:image)
+      expect { 
+                delete :destroy, id: image
+
+              }.to change(Image, :count).by(-1)
+    end
+
+    it "redirects to the  page" do
+      login(user)
+      image = FactoryGirl.create(:image)
+      delete :destroy, id: image
+      response.should redirect_to images_path
     end
 
   end

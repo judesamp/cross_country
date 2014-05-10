@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe EventsController do
+  
   let(:user) { FactoryGirl.create(:user) }
 
   describe "GET #index" do
@@ -135,7 +136,25 @@ describe EventsController do
 
   end
 
+  describe "DELETE #destroy" do
 
+    it "updates event with specified attributes" do
+      login(user)
+      event = FactoryGirl.create(:event)
+      expect { 
+                delete :destroy, id: event
+
+              }.to change(Event, :count).by(-1)
+    end
+
+    it "redirects to the  page" do
+      login(user)
+      event = FactoryGirl.create(:event)
+      delete :destroy, id: event
+      response.should redirect_to events_path
+    end
+
+  end
 
 end
 
