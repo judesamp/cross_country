@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  post 'event_comments_create' => 'comments#custom_create'
+  #just did this for practice
+  #post 'event_comments_create' => 'comments#custom_create'
   get "login" => "sessions#new"
   get "logout" => "sessions#destroy"
 
@@ -59,7 +60,6 @@ Rails.application.routes.draw do
         end
       end
 
-      resources :comments
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales

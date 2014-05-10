@@ -20,14 +20,16 @@ class CommentsController < ApplicationController
     end
   end
 
-  def custom_create
-     @new_comment = Comment.new(comment_params)
-    if @new_comment.save
-      redirect_to events_path notice: "Comment created"
-    else
-      render :new
-    end
-  end
+  # did this to test method taught in class for embedding forms/etc from other classes
+  # but I removed the form:)
+  # def custom_create
+  #    @new_comment = Comment.new(comment_params)
+  #   if @new_comment.save
+  #     redirect_to events_path notice: "Comment created"
+  #   else
+  #     render :new
+  #   end
+  # end
 
   private 
 

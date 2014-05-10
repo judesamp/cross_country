@@ -2,7 +2,11 @@ FactoryGirl.define do
   
   factory :image do |f|
     f.title "Your Momma"
-    f.image_data "image_data"
+    f.image_data File.open(File.join(Rails.root, "/spec/fixtures/files/test_image.jpg"))
+
+
+
+
   end
 
 

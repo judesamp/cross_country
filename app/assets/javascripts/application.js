@@ -19,6 +19,7 @@
 //= require imagesloaded
 //= require freewall
 //= require bootstrap/modal
+//= require turbolinks
 //= require_tree .
 
 

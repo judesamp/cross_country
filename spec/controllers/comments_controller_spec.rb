@@ -98,3 +98,16 @@
 #     end
 #   end
 # end
+
+  # describe "GET #custom_create" do
+
+  #   it "creates a new comment (using method taught in class)" do
+  #     login(user)
+  #     event_attrs = FactoryGirl.attributes_for(:event)
+  #     expect{
+  #         post :custom_create, event: event_attrs
+  #     }.to change(Event, :count).by(1)
+  #   end
+
+
+  # end

@@ -10,9 +10,9 @@ class EventsController < ApplicationController
   def create
     @new_event = Event.new(event_params)
     if @new_event.save
-      redirect_to event_path(@new_event)
+      redirect_to events_path
     else
-      redirect_to new_event_path(@new_event), notice: "Something is amiss. Please try again."
+      render new_event_path, notice: "Something is amiss. Please try again."
     end
   end
 

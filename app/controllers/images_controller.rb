@@ -27,6 +27,12 @@ class ImagesController < ApplicationController
 
     @tags = @image.tags
     @tag = Tag.new
+
+    respond_to do |format|
+      format.html
+      format.js
+
+    end
   end
 
   def edit

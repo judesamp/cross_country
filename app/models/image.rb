@@ -1,17 +1,16 @@
 class Image < ActiveRecord::Base
   has_and_belongs_to_many :tags
   has_many :comments, as: :commentable
+  belongs_to :user
   accepts_nested_attributes_for :tags, :reject_if => :all_blank
   validates_presence_of :title
-  #validates_presence_of :image_data
-  belongs_to :user
+  mount_uploader :image_data, ImageDataUploader
   
   default_scope { order('image_date DESC') } 
 
-  mount_uploader :image_data, ImageDataUploader
+  
 
   def self.descending
-    Image.all.order('image_date DESC')
+    Image.order('image_date DESC').all
   end
-
 end

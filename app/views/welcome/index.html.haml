@@ -46,16 +46,38 @@
           %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
 
 :javascript
+  
+
   imagesLoaded( document.querySelector('#index_container'), function( instance ) {console.log('all images are loaded'); 
     wall = new freewall("#image_container");
     wall.reset({
       selector: '.item',
        animate: true,
       gutterY: 10,
-      gutterX: 10
+      gutterX: 10,
+      delay: 50
     });
     wall.fitWidth();
+
   });
+
+
+  if ($('#index_container:visible')) {
+    imagesLoaded( document.querySelector('#index_container'), function( instance ) {console.log('all images are loaded'); 
+    wall = new freewall("#image_container");
+    wall.reset({
+      selector: '.item',
+      animate: true,
+      gutterY: 10,
+      gutterX: 10
+    });
+    wall.fitZone();
+
+  });
+
+  }
+
+ 
 
  
   
