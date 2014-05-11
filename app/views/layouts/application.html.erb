@@ -13,10 +13,10 @@
     <a class="navbar-brand" href="/">Visual Running Log</a>
     <ul class="nav navbar-nav">
       <li class="white_nav">
-        <%= link_to "Your Runs", events_path, class: "white_nav" %>
+        <%= link_to "Your Runs", events_path, remote: true, class: "white_nav" %>
       </li>
       <li >
-        <%= link_to "Your Images", images_path, class: "white_nav" %>
+        <%= link_to "Your Images", images_path, remote: true, class: "white_nav"%>
       </li>
     </ul>
 

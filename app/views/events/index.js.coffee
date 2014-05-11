@@ -1,0 +1,1 @@
+$(".add_top_margin").html("<%= escape_javascript(render(:partial => 'events/index')) %>");

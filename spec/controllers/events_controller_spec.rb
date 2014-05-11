@@ -10,13 +10,13 @@ describe EventsController do
       login(user)
       event = FactoryGirl.create(:event)
       current_user.events << event
-      get :index
+      xhr :get, :index, :format => "js"
       expect(assigns(:events)).to eq [event]
     end
 
     it "renders the index page" do
       login(user)
-      get :index
+      xhr :get, :index, :format => "js"
       response.should render_template :index
     end
 
@@ -152,6 +152,17 @@ describe EventsController do
       event = FactoryGirl.create(:event)
       delete :destroy, id: event
       response.should redirect_to events_path
+    end
+
+  end
+
+  describe "GET download" do
+
+    it "should download specified event image" do
+      login(user)
+      event = FactoryGirl.create(:event_with_image)
+      get :download, id: event.id
+      response.headers["Content-Disposition"].should eq("attachment; filename=\"test_image.jpg\"")
     end
 
   end

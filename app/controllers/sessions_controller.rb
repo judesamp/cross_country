@@ -1,9 +1,7 @@
 class SessionsController < ApplicationController
   skip_filter :ensure_logged_in
-  skip_filter :ensure_ownership
 
   def new
-
   end
 
   def create

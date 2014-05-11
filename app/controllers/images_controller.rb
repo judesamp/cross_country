@@ -3,6 +3,10 @@ class ImagesController < ApplicationController
   
   def index
     @images = Image.all
+    respond_to do | format | 
+        format.html 
+        format.js 
+    end
   end
 
   def new
@@ -20,19 +24,22 @@ class ImagesController < ApplicationController
   end
 
   def show
-    @image = Image.find(params[:id])
-    @commentable = @image
-    @comments = @commentable.comments
-    @comment = Comment.new
+    # if owned_by_current_user?(params[:id])
+      @image = Image.find(params[:id])
+      @commentable = @image
+      @comments = @commentable.comments
+      @comment = Comment.new
 
-    @tags = @image.tags
-    @tag = Tag.new
+      @tags = @image.tags
+      @tag = Tag.new
 
-    respond_to do |format|
-      format.html
-      format.js
-
-    end
+      respond_to do |format|
+        format.html
+        format.js
+      end
+    # else
+    #   redirect_to root_path, notice: "You don't appear to be the owner of this image."
+    # end
   end
 
   def edit
@@ -64,6 +71,10 @@ class ImagesController < ApplicationController
   end
 
   private
+  def owned_by_current_user?(image_id)
+    image = Image.find(image_id)
+    image.user_id == current_user.id 
+  end
 
   def image_params
     params.require(:image).permit(:title, :description, :image_date, :image_data, :user_id, tags_attributes: [:id, :name, :_destroy])

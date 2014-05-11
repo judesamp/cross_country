@@ -1,6 +1,5 @@
 class TagsController < ApplicationController
   before_filter :load_image
-  skip_filter :ensure_ownership
 
   def index
     @image = @current_image
@@ -21,9 +20,6 @@ class TagsController < ApplicationController
       render :new
     end
   end
-
-
-
 
 
   private 

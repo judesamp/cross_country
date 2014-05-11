@@ -1,6 +1,9 @@
 class EventsController < ApplicationController
   def index
     @events = current_user.events.shuffle
+    respond_to do | format |  
+        format.js {}  
+    end
   end
 
   def new

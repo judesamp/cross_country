@@ -11,14 +11,14 @@ describe ImagesController do
       session[:user_id] = user.id
       image = FactoryGirl.create(:image)
       user.images << image
-      get :index
+      xhr :get, :index, :format => "js"
       expect(assigns(:images)).to eq [image]
     end
 
     it "renders the index page" do
       user = FactoryGirl.create(:user)
       session[:user_id] = user.id
-      get :index
+      xhr :get, :index, :format => "js"
       response.should render_template :index
     end
 
@@ -154,6 +154,26 @@ describe ImagesController do
       image = FactoryGirl.create(:image)
       delete :destroy, id: image
       response.should redirect_to images_path
+    end
+
+  end
+
+  describe "private method #ensure_logged_in" do
+
+    it "should ensure a user is logged in before allowing access" do
+      get :index
+      response.should redirect_to root_path
+    end
+
+  end
+
+  describe "GET download" do
+
+    it "should download specified image" do
+      login(user)
+      image = FactoryGirl.create(:image)
+      get :download, id: image.id
+      response.headers["Content-Disposition"].should eq("attachment; filename=\"test_image.jpg\"")
     end
 
   end

@@ -11,4 +11,10 @@ FactoryGirl.define do
     f.email nil
   end
 
+  factory :custom_user, class: User do |f|
+    f.email "email@email.com"
+    f.password "bill"
+    f.password_confirmation "bill"
+  end
+
 end

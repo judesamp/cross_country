@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   #post 'event_comments_create' => 'comments#custom_create'
 
   get "login" => "sessions#new"
+  post "login" => "sessions#create"
   get "logout" => "sessions#destroy"
 
   resources :sessions, only: [:new, :create, :destroy]
