@@ -71,10 +71,11 @@ class ImagesController < ApplicationController
   end
 
   private
-  def owned_by_current_user?(image_id)
-    image = Image.find(image_id)
-    image.user_id == current_user.id 
-  end
+  # to implement
+  # def owned_by_current_user?(image_id)
+  #   image = Image.find(image_id)
+  #   image.user_id == current_user.id 
+  # end
 
   def image_params
     params.require(:image).permit(:title, :description, :image_date, :image_data, :user_id, tags_attributes: [:id, :name, :_destroy])

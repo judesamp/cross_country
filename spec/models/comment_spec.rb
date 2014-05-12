@@ -47,6 +47,11 @@ describe Comment do
     expect(image.comments[0]).to eq comment_2
   end
 
+  it "should have a minimum length of 2 characters for its content" do
+    comment_1 = Comment.new(:content => "!")
+    comment_1.should_not be_valid
+  end
+
 end
 
 
