@@ -45,7 +45,6 @@ describe EventsController do
 
       it "creates a new event" do
         login(user)
-        event_attrs = FactoryGirl.attributes_for(:event)
         expect{
             post :create, event: event_attrs
         }.to change(Event, :count).by(1)

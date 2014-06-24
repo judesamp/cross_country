@@ -79,7 +79,7 @@ describe ImagesController do
       comment = FactoryGirl.create(:comment)
       image.comments << comment
       get :show, id: image
-      expect(assigns(:comments).first).to eq comment 
+      expect(assigns(:comments).first).to eq comment
     end
 
     it "assigns @comments with a new comment" do
@@ -125,6 +125,7 @@ describe ImagesController do
       put :update, id: image, :image => {title: "updated_title"}
       updated_image = Image.find(image.id)
       expect(updated_image.title).to eq "updated_title"
+      #assigns(:photo).photo_name.should eq "classroom"
     end
 
     ### how to test failure redirect?

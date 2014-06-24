@@ -13,4 +13,9 @@ class Image < ActiveRecord::Base
   def self.descending
     Image.order('image_date DESC').all
   end
+
+  def self.recent_images
+    Image.last(4).reverse
+  end
+  
 end

@@ -6,7 +6,6 @@ FactoryGirl.define do
     #f.password_confirmation "dude"
   end
 
-
   factory :invalid_user, class: User do |f|
     f.email nil
   end

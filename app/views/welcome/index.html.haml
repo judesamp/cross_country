@@ -1,26 +1,22 @@
-.title
-  %br
-  %h1 Welcome to Visual Running Log
-  %br
-  - if current_user.nil?
-    %h4 Click signup to get started or go ahead and login
-  - else
-    %h4 Get started logging your runs! Add runs and images by clicking above.
-  %br
-  %br
- 
+- unless current_user
+  .title
+    %br
+    %h1 Welcome to Visual Running Log
+    %br
+    - if current_user.nil?
+      %h4 Click signup to get started or go ahead and login
+    - else
+      %h4 Get started logging your runs! Add runs and images by clicking above.
+    %br
+    %br
 
-
-  
-
-
-#index_container
-  
-  #image_container
+  #index_container
     
-    -@images.each do |image|
+    #image_container
+      
+      -@images.each do |image|
 
-      = link_to (image_tag image.image_data.url(:regular), class: 'item'), image_path(image)
+        = link_to (image_tag image.image_data.url(:regular), class: 'item'), image_path(image)
       
 
   #signup.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
@@ -44,6 +40,33 @@
           = render "sessions/new"
         .modal-footer
           %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
+- else
+  .title
+    .col-md-12
+      .col-md-3
+        %span Current Goals
+      .col-md-2
+        = link_to "View All Goals", events_path
+  .title
+    .col-md-12
+      .col-md-3
+        %span Recent Runs
+      .col-md-2
+        = link_to "View All Runs", events_path
+    -@recent_images.each do |image|
+
+      = link_to (image_tag image.image_data.url(:regular), class: 'recent_run_image'), image_path(image)
+  
+  
+  .title
+    %h2 All Runs
+  #index_container  
+    #image_container
+      -@images.each do |image|
+
+        = link_to (image_tag image.image_data.url(:regular), class: 'item'), image_path(image)
+
+
 
 :javascript
   
@@ -76,6 +99,10 @@
   });
 
   }
+
+
+
+
 
  
 

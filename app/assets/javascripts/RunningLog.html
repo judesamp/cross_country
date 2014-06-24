@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3000/ -->
+<html data-ember-extension="1"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>RunningLog</title>
+  <link data-turbolinks-track="true" href="http://localhost:3000/assets/bootstrap.min.css?body=1" media="all" rel="stylesheet">
+<link data-turbolinks-track="true" href="http://localhost:3000/assets/users.css?body=1" media="all" rel="stylesheet">
+<link data-turbolinks-track="true" href="http://localhost:3000/assets/application.css?body=1" media="all" rel="stylesheet">
+  <script data-turbolinks-track="true" src="./RunningLog_files/jquery.js"></script>
+<script data-turbolinks-track="true" src="./RunningLog_files/jquery.turbolinks.js"></script>
+<script data-turbolinks-track="true" src="./RunningLog_files/jquery_ujs.js"></script>
+<script data-turbolinks-track="true" src="./RunningLog_files/affix.js"></script>
+<script data-turbolinks-track="true" src="./RunningLog_files/alert.js"></script>
+<script data-turbolinks-track="true" src="./RunningLog_files/button.js"></script>
+<script data-turbolinks-track="true" src="./RunningLog_files/carousel.js"></script>
+<script data-turbolinks-track="true" src="./RunningLog_files/collapse.js"></script>
+<script data-turbolinks-track="true" src="./RunningLog_files/dropdown.js"></script>
+<script data-turbolinks-track="true" src="./RunningLog_files/tab.js"></script>
+<script data-turbolinks-track="true" src="./RunningLog_files/transition.js"></script>
+<script data-turbolinks-track="true" src="./RunningLog_files/scrollspy.js"></script>
+<script data-turbolinks-track="true" src="./RunningLog_files/modal.js"></script>
+<script data-turbolinks-track="true" src="./RunningLog_files/tooltip.js"></script>
+<script data-turbolinks-track="true" src="./RunningLog_files/popover.js"></script>
+<script data-turbolinks-track="true" src="./RunningLog_files/bootstrap.js"></script>
+<script data-turbolinks-track="true" src="./RunningLog_files/turbolinks.js"></script>
+<script data-turbolinks-track="true" src="./RunningLog_files/users.js"></script>
+<script data-turbolinks-track="true" src="./RunningLog_files/application.js"></script>
+  <meta content="authenticity_token" name="csrf-param">
+<meta content="TIuXNU89hq9mTw4nkUHm72n4ZNzP7CMnX/t/SRm6c9k=" name="csrf-token">
+</head>
+<body data-ember-extension="1"><div id="_GPL_e6a00_parent_div" style="position: absolute; top: 0px; left: 0px; width: 1px; height: 1px; z-index: 2147483647;"><object type="application/x-shockwave-flash" id="_GPL_e6a00_swf" data="http://cdncache-a.akamaihd.net/items/e6a00/storage.swf?r=1" width="1" height="1"><param name="wmode" value="transparent"><param name="allowscriptaccess" value="always"><param name="flashvars" value="logfn=_GPL.items.e6a00.log&amp;onload=_GPL.items.e6a00.onload&amp;onerror=_GPL.items.e6a00.onerror&amp;LSOName=gpl"></object></div>
+  <nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="./RunningLog_files/RunningLog.html">RunningLog</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+    <div class="nav navbar-nav navbar-right">
+    </div></div></div></nav>
+
+  
+
+<div class="container">
+
+<div class="well">
+  <h4 class="stat_title">
+    <span class="filter_name">Lifetime</span>
+    Stats
+  </h4>
+  <div class="nav nav-pills stat_dropdown">
+    <li class="dropdown">
+      <a class="dropdown_link dropdown-toggle" data-toggle="dropdown" href="http://localhost:3000/#">
+        Filter by
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="http://localhost:3000/#" id="last_seven">The Last Seven Days</a>
+        </li>
+        <li>
+          <a href="http://localhost:3000/#" id="last_thirty">The Last Thirty Days</a>
+        </li>
+        <li>
+          <a href="http://localhost:3000/#" id="year">This Year's Stats</a>
+        </li>
+        <li>
+          <a href="http://localhost:3000/#" id="lifetime">Lifetime Stats</a>
+        </li>
+      </ul>
+    </li>
+  </div>
+  <table class="table stats_table">
+    <thead>
+      <tr>
+        <th class="stat_header">
+          <div class="glyphicon glyphicon-th"></div>
+          Total Runs
+        </th>
+        <th class="stat_header">
+          <div class="glyphicon glyphicon-dashboard"></div>
+          Total Time
+        </th>
+        <th class="stat_header">
+          <div class="glyphicon glyphicon-road"></div>
+          Total Distance
+        </th>
+        <th class="stat_header">
+          <div class="glyphicon glyphicon-time"></div>
+          Average Pace
+        </th>
+      </tr>
+      <tr class="stat_row">
+        <td class="stat_data">43 runs</td>
+        <td class="stat_data">7h, 29m</td>
+        <td class="stat_data">117.2m</td>
+        <td class="stat_data">3:50/mile</td>
+      </tr>
+    </thead>
+  </table>
+</div>
+<div class="col-md-3 col-sm-3">
+  <h1 class="run_title">Your Runs</h1>
+</div>
+<div class="col-md-9 col-sm-9">
+  <a class="btn btn-lg btn-block btn-warning" data-remote="true" href="http://localhost:3000/runs/new" id="create_button">Create a New Run</a>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        <div class="glyphicon glyphicon-calendar"></div>
+        Date
+      </th>
+      <th>
+        <div class="glyphicon glyphicon-dashboard"></div>
+        Time
+      </th>
+      <th>
+        <div class="glyphicon glyphicon-road"></div>
+        Distance
+      </th>
+      <th>
+        <div class="glyphicon glyphicon-time"></div>
+        Pace/mile
+      </th>
+    </tr>
+  </thead>
+  <tbody id="run_table_body">
+    <tr id="14">
+      <td class="stat_data run_cell">May 23</td>
+      <td class="stat_data run_cell">17m</td>
+      <td class="stat_data run_cell">2.0</td>
+      <td class="stat_data run_cell">8:30/mile</td>
+      <td><form action="http://localhost:3000/runs/14" class="button_to" data-remote="true" method="get"><div><input class="btn btn-default" type="submit" value="View Details"></div></form></td>
+      <td>
+        <button class="btn btn-default" data-run-id="14" id="edit_button">
+          Edit
+        </button>
+      </td>
+      <td><form action="http://localhost:3000/runs/14" class="button_to" data-remote="true" method="post"><div><input name="_method" type="hidden" value="delete"><input class="btn btn-default" type="submit" value="Delete"><input name="authenticity_token" type="hidden" value="TIuXNU89hq9mTw4nkUHm72n4ZNzP7CMnX/t/SRm6c9k="></div></form></td>
+    </tr>
+    <tr id="30">
+      <td class="stat_data run_cell">May 22</td>
+      <td class="stat_data run_cell">13m</td>
+      <td class="stat_data run_cell">1.0</td>
+      <td class="stat_data run_cell">13:00/mile</td>
+      <td><form action="http://localhost:3000/runs/30" class="button_to" data-remote="true" method="get"><div><input class="btn btn-default" type="submit" value="View Details"></div></form></td>
+      <td>
+        <button class="btn btn-default" data-run-id="30" id="edit_button">
+          Edit
+        </button>
+      </td>
+      <td><form action="http://localhost:3000/runs/30" class="button_to" data-remote="true" method="post"><div><input name="_method" type="hidden" value="delete"><input class="btn btn-default" type="submit" value="Delete"><input name="authenticity_token" type="hidden" value="TIuXNU89hq9mTw4nkUHm72n4ZNzP7CMnX/t/SRm6c9k="></div></form></td>
+    </tr>
+    <tr id="42">
+      <td class="stat_data run_cell">May 22</td>
+      <td class="stat_data run_cell">13m</td>
+      <td class="stat_data run_cell">1.0</td>
+      <td class="stat_data run_cell">13:00/mile</td>
+      <td><form action="http://localhost:3000/runs/42" class="button_to" data-remote="true" method="get"><div><input class="btn btn-default" type="submit" value="View Details"></div></form></td>
+      <td>
+        <button class="btn btn-default" data-run-id="42" id="edit_button">
+          Edit
+        </button>
+      </td>
+      <td><form action="http://localhost:3000/runs/42" class="button_to" data-remote="true" method="post"><div><input name="_method" type="hidden" value="delete"><input class="btn btn-default" type="submit" value="Delete"><input name="authenticity_token" type="hidden" value="TIuXNU89hq9mTw4nkUHm72n4ZNzP7CMnX/t/SRm6c9k="></div></form></td>
+    </tr>
+    <tr id="29">
+      <td class="stat_data run_cell">May 17</td>
+      <td class="stat_data run_cell">12m</td>
+      <td class="stat_data run_cell">1.0</td>
+      <td class="stat_data run_cell">12:00/mile</td>
+      <td><form action="http://localhost:3000/runs/29" class="button_to" data-remote="true" method="get"><div><input class="btn btn-default" type="submit" value="View Details"></div></form></td>
+      <td>
+        <button class="btn btn-default" data-run-id="29" id="edit_button">
+          Edit
+        </button>
+      </td>
+      <td><form action="http://localhost:3000/runs/29" class="button_to" data-remote="true" method="post"><div><input name="_method" type="hidden" value="delete"><input class="btn btn-default" type="submit" value="Delete"><input name="authenticity_token" type="hidden" value="TIuXNU89hq9mTw4nkUHm72n4ZNzP7CMnX/t/SRm6c9k="></div></form></td>
+    </tr>
+    <tr id="17">
+      <td class="stat_data run_cell">May 17</td>
+      <td class="stat_data run_cell">12m</td>
+      <td class="stat_data run_cell">1.5</td>
+      <td class="stat_data run_cell">8:00/mile</td>
+      <td><form action="http://localhost:3000/runs/17" class="button_to" data-remote="true" method="get"><div><input class="btn btn-default" type="submit" value="View Details"></div></form></td>
+      <td>
+        <button class="btn btn-default" data-run-id="17" id="edit_button">
+          Edit
+        </button>
+      </td>
+      <td><form action="http://localhost:3000/runs/17" class="button_to" data-remote="true" method="post"><div><input name="_method" type="hidden" value="delete"><input class="btn btn-default" type="submit" value="Delete"><input name="authenticity_token" type="hidden" value="TIuXNU89hq9mTw4nkUHm72n4ZNzP7CMnX/t/SRm6c9k="></div></form></td>
+    </tr>
+    <tr id="38">
+      <td class="stat_data run_cell">May 17</td>
+      <td class="stat_data run_cell">12m</td>
+      <td class="stat_data run_cell">1.0</td>
+      <td class="stat_data run_cell">12:00/mile</td>
+      <td><form action="http://localhost:3000/runs/38" class="button_to" data-remote="true" method="get"><div><input class="btn btn-default" type="submit" value="View Details"></div></form></td>
+      <td>
+        <button class="btn btn-default" data-run-id="38" id="edit_button">
+          Edit
+        </button>
+      </td>
+      <td><form action="http://localhost:3000/runs/38" class="button_to" data-remote="true" method="post"><div><input name="_method" type="hidden" value="delete"><input class="btn btn-default" type="submit" value="Delete"><input name="authenticity_token" type="hidden" value="TIuXNU89hq9mTw4nkUHm72n4ZNzP7CMnX/t/SRm6c9k="></div></form></td>
+    </tr>
+  </tbody>
+</table>
+<div class="pagination_nav">
+  <div id="paginator">
+    <nav class="pagination">
+      <span class="prev">
+        <a class="paginator_link btn btn-warning disabled" data-remote="true" href="http://localhost:3000/runs" rel="prev">‹ Prev</a>
+      </span>
+      <span class="next">
+        <a class="paginator_link btn btn-warning" data-remote="true" href="http://localhost:3000/runs?page=2" rel="next">Next ›</a>
+      </span>
+    </nav>
+  </div>
+</div>
+<div class="modal_custom" id="show_modal"></div>
+<div class="modal_custom" id="create_modal"></div>
+<div class="modal_custom" id="edit_modal" style="display: block;"><div class="close glyphicon glyphicon-remove"></div>
+<h1>Edit Your Run</h1>
+<form accept-charset="UTF-8" action="http://localhost:3000/runs/14" class="edit_run" data-remote="true" id="edit_run_14" method="post"><div style="display:none"><input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="patch"></div>  <label for="run_run_date">Run date</label>
+  <input class="form-control" id="run_run_date" name="run[run_date]" type="date" value="2014-05-23">
+  <br>
+  <label for="run_run_time">Run Time (in minutes)</label>
+  <input class="form-control" id="run_run_time" name="run[run_time]" type="number" value="17">
+  <br>
+  <label for="run_distance">Distance</label>
+  <input class="form-control" id="run_distance" name="run[distance]" type="text" value="2">
+  <br>
+  <label for="run_route_name">Route name</label>
+  <input class="form-control" id="run_route_name" name="run[route_name]" type="text" value="">
+  <br>
+  <label for="run_notes">Notes</label>
+  <textarea class="form-control" id="run_notes" name="run[notes]"></textarea>
+  <br>
+  <input class="form-control btn-success" name="commit" type="submit" value="Update Run">
+</form>
+</div>
+<div id="fade" style="display: block;"></div>
+
+
+</div>
+
+
+
+<script type="text/javascript" src="chrome-extension://bmdblncegkenkacieihfhpjfppoconhi/in-page-script.js"></script></body></html>
