@@ -20,6 +20,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-ui-rails'
 gem 'rails4-autocomplete'
 gem 'imagesLoaded_rails'
+gem 'rails_12factor',   group: :production
 
 
 group :development do
