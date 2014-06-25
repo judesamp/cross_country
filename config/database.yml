@@ -1,18 +1,18 @@
 development:
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
-  database: run_the_usa_development
+  database: visual_log_development
   pool: 5
-  user_name: root
-  password:
-  socket: /tmp/mysql.sock
 
 test:
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
   reconnect: false
-  database: run_the_usa_test
+  database: visual_log_test
   pool: 5
-  user_name: root
-  password:
-  socket: /tmp/mysql.sock
+
+production:
+  adapter: postgresql
+  encoding: utf8
+  database: visual_log_app
+  pool: 5
